@@ -1,0 +1,100 @@
+.main{
+	width: 30%;
+	min-width: 280px;
+	max-width: 300px;
+	height: 350px;
+	background-color: $background-form;
+	border-radius: 15px;
+	position: absolute;
+	right: 20px;
+	top: 10%;
+}
+
+form{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+
+	flex-direction: row;
+	flex-direction: -ms-row;
+	flex-direction: -webkit-row;
+
+	flex-wrap: wrap;
+	flex-wrap: -ms-wrap;
+	flex-wrap: -webkit-wrap;
+
+	justify-content: center;
+	height: 60%;
+}
+
+h2{
+	margin: 7px auto;
+	text-align: center;
+	font: $title;
+	color: #fff;
+}
+
+span{
+	padding: 0;
+	color: $icons-white;
+}
+
+.input-div{
+	width: 100%;
+	position: relative;
+	height: 60px;
+	text-align: center;
+}
+
+input{
+	margin: 10px 15px;
+	border: 0;
+	font: $normal;
+}
+
+.inp{
+	background: transparent;
+	border-bottom: 1px solid $border-bottom;
+	padding: 4px 0;
+	width: 172px;
+	color: $input-color;
+	-webkit-transition: background .8s ease;
+	-moz-transition: background .8s ease;
+	-ms-transition: background .8s ease;
+	-o-transition: background .8s ease;
+	transition: background .8s ease;
+}
+
+.btn{
+	border: none;
+	padding: 10px 20px;
+	background: $input-submit;
+	font: $button;
+	margin: 30px auto;
+	color: white;
+
+	-webkit-transition: background .5s ease;
+	-moz-transition: background .5s ease;
+	-ms-transition: background .5s ease;
+	-o-transition: background .5s ease;
+	transition: background .5s ease;
+}
+
+.btn:hover{
+	background: $hover-submit;
+}
+
+.tooltip{
+	visibility: hidden;
+	position: absolute;
+	width: 200px;
+	background: transparent;
+	font-size: 14px;
+	top: 40px;
+	left: 0;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
