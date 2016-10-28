@@ -1,0 +1,24 @@
+Notas de códigos:
+
+QUICK
+
+1. Se debe cambiar los códigos CSS para mejorar su reutilización y aligerar la carga de información al servidor.
+
+2. Se debe colocar la restricción de espacio para los nombres y la contraseña en los formularios de ingreso y registro.
+
+3. Se deben hacer los "tooltips" de ayuda para el formulario de registro.
+
+/*--- POR HACER ---*/
+
+1. Manejar Jquery para mejorar la UX.
+2. Establecer una base de datos y empezar a programar PHP.
+3. Revisar opciones para manipular el servidor (PHP u alguna otra herramienta).
+4. ¿Funcionaría usar Ruby?
+5. ¿Django funcionará para mantener la app de los salones virtuales?
+6. ¿React.js para qué?
+7. Java es necesario para desarrollar la app de Android.
+8. ¿Puedo usar C para algo?¿Algún script?
+9. Ethical Hacking para proteger el servidor web (puedo utilizar scripts de C, Python y PHP para protegerlo).
+10. ¿Cómo leer PDFs? Con Python Papuuu :D
+11. El horario no se actualizará en tiempo real.
+12. Crear clases CSS para cambiar estados con Javascript.
