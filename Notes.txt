@@ -8,9 +8,11 @@ QUICK
 
 3. Se deben hacer los "tooltips" de ayuda para el formulario de registro.
 
+4. Usar Alertify.js para las alertas.
+
 /*--- POR HACER ---*/
 
-1. Manejar Jquery para mejorar la UX.
+1. Manejar jQuery para mejorar la UX y AJAX para realizar peticiones al servidor.
 2. Establecer una base de datos y empezar a programar PHP.
 3. Revisar opciones para manipular el servidor (PHP u alguna otra herramienta).
 4. ¿Funcionaría usar Ruby?
