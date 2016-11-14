@@ -1,0 +1,11 @@
+commit 5894ccadfba450046185e69300cb76375df86a47
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Fri Oct 28 12:32:19 2016 -0400
+
+    Se incluye los archivos CSS y Javascript
+
+commit 14181c46a2c91738d48f3b0f09d829dc083d0e7b
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Fri Oct 28 12:30:21 2016 -0400
+
+    Prueba de Commits
