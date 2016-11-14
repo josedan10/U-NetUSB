@@ -24,3 +24,5 @@ QUICK
 10. ¿Cómo leer PDFs? Con Python Papuuu :D
 11. El horario no se actualizará en tiempo real.
 12. Crear clases CSS para cambiar estados con Javascript.
+13. Revisar la documentación de FalconMasters sobre OOCSS, Animate.css, propiedad z-index, screenFly, Bootstrap, Animaciones CSS, Transiciones CSS, Velocity para documentación sobre lenguajes de programación, Flexbox, AJAX, MarvelApp, LivePreview, ResponsiveDesign, CodePen.
+14. MaterialUp para agarra inspiración e ideas.

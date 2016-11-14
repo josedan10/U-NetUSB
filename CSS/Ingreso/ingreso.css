@@ -76,7 +76,7 @@ span {
   padding: 0;
   color: #FFFFFF; }
 
-.input-div {
+.input {
   width: 100%;
   position: relative;
   height: 60px;
@@ -85,9 +85,7 @@ span {
 input {
   margin: 10px 15px;
   border: 0;
-  font: 14px "Roboto", sans-serif; }
-
-.inp {
+  font: 14px "Roboto", sans-serif;
   background: transparent;
   border-bottom: 1px solid #5E5151;
   padding: 4px 0;

@@ -231,13 +231,17 @@ nav ul li:hover span {
   width: 100%;
   height: 30px;
   padding: 4px 0;
-  background: transparent;
+  z-index: 1;
+  background: #b3b3b3;
   border: none; }
 
 .srch {
-  width: 80%;
+  margin: 0 auto;
+  z-index: -1;
+  width: 95%;
   position: absolute;
-  bottom: 30px; }
+  bottom: 5px;
+  left: 5px; }
 
 @media screen and (max-width: 1000px) {
   .buscador {

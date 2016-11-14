@@ -39,7 +39,7 @@ span{
 	color: $icons-white;
 }
 
-.input-div{
+.input{
 	width: 100%;
 	position: relative;
 	height: 60px;
@@ -50,9 +50,6 @@ input{
 	margin: 10px 15px;
 	border: 0;
 	font: $normal;
-}
-
-.inp{
 	background: transparent;
 	border-bottom: 1px solid $border-bottom;
 	padding: 4px 0;
