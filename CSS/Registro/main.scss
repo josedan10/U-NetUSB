@@ -1,0 +1,13 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.in-b{
+	display: inline-block;
+}
+
+@import 'color';
+@import 'fonts';
+@import 'body-registro';
+@import 'formulario-registro';

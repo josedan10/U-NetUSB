@@ -15,24 +15,24 @@
 		<h2>REGISTRO</h2>
 		<form action="" method="get" name="formulario" id="formulario">
 			
-			<div class="inputbox">
-				<input type="text" name="names" placeholder="Nombres" id="nombre"  autofocus ><span class="tooltip"></span>
+			<div class="input">
+				<input type="text" name="names" placeholder="Nombres" id="nombre"  autofocus class="inp"><span class="tooltip"></span>
 			</div>
 
-			<div class="inputbox">
-				<input type="text" name="last_names" placeholder="Apellidos" id="apellido" ><span class="tooltip"></span>
+			<div class="input">
+				<input type="text" name="last_names" placeholder="Apellidos" id="apellido" class="inp"><span class="tooltip"></span>
 			</div>
-			<div class="inputbox">
-				<input type="text" name="id-card" placeholder="Carnet(XX-XXX)" id="carnet" ><span class="tooltip"></span>
+			<div class="input">
+				<input type="text" name="id-card" placeholder="Carnet(XX-XXX)" id="carnet" class="inp"><span class="tooltip"></span>
 			</div>
-			<div class="inputbox">
-				<input type="password" name="password" placeholder="Contraseña" id="contraseña" ><span class="tooltip"></span>
+			<div class="input">
+				<input type="password" name="password" placeholder="Contraseña" id="contraseña" class="inp"><span class="tooltip"></span>
 			</div>
-			<div class="inputbox">
-				<input type="password" name="password_review" placeholder="Verifique su contraseña" id="contraseña_conf" ><span class="tooltip"></span>
+			<div class="input">
+				<input type="password" name="password_review" placeholder="Verifique su contraseña" id="contraseña_conf" class="inp"><span class="tooltip"></span>
 			</div>
-			<p><input type="checkbox" name="terminos" id="checkbox">He leído y acepto los <a href="#">términos y condiciones de servicio</a>.</p>
-			<input type="submit" name="sign-in" value="Crear cuenta" id="boton">
+			<p class="in-b"><input type="checkbox" name="terminos" id="checkbox" class="in-b">He leído y acepto los <a href="#">términos y condiciones de servicio</a>.</p>
+			<input class="btn" type="submit" name="sign-in" value="Crear cuenta" id="boton">
 		
 		</form>
 

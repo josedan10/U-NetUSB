@@ -1,0 +1,88 @@
+.formulario{
+	height: 400px;
+	width: 300px;
+	padding: 20px 30px;
+	background-color: $background-form;
+	margin: 1% auto 0;
+	border-radius: 20px;
+	color: #000;
+}
+
+h2{
+	text-align: center;
+	color: #000;
+	font: $title;
+}
+
+.input{
+	position: relative;
+	height: 45px;
+}
+
+.inp{
+	display: block;
+	color: #000;
+	margin: 7px auto;
+	padding: 5px 0;
+	width: 200px;
+	border: 0;
+	border-bottom: 2px solid $border-bottom;
+	background-color: transparent;
+	-webkit-transition: background .3s ease;
+	-moz-transition: background .3s ease;
+	-ms-transition: background .3s ease;
+	-o-transition: background .3s ease;
+	transition: background .3s ease;
+}
+
+input:focus{
+	border: 0;
+	border-bottom: 2px solid $border-bottom;
+	background-color: transparent;
+}
+
+input[type="checkbox"]{
+	margin-right: 10px;
+}
+
+.btn{
+	border: none;
+	display: block;
+	background: $input-submit;
+	color: #000;
+	margin: 20px auto;
+	padding: 4px 20px;
+	font-family: $button;
+	font-size: 20px;
+	-webkit-transition: background .8s ease;
+	-moz-transition: background .8s ease;
+	-ms-transition: background .8s ease;
+	-o-transition: background .8s ease;
+	transition: background .8s ease;
+}
+
+.btn:hover{
+	background-color: $border-bottom;
+	cursor: pointer;
+}
+
+input:-webkit-autofill {
+	background-color: transparent;
+}
+
+.tooltip{
+	font: 14px 'Roboto', sans-serif;
+	visibility: hidden;
+	position: absolute;
+	width: 280px;
+	background: transparent;
+	color: red;
+	font-size: 14px;
+	top: 35px;
+	left: 40px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
