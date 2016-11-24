@@ -12,12 +12,12 @@
 	<div class="main">
 	  <h2>ACCEDE</h2>
 			<form action="" method="get" name="formulario" id="formulario">
-	        	<div class="input-div b">
-					<span class="icon icon-v-card in-b"></span><input type="text" name="username" placeholder="Carnet (XX-XXX)" id="carnet" class="in-b inp"><span class="tooltip" name="tooltip"></span>
+	        	<div class="input b">
+					<span class="icon icon-v-card in-b"></span><input type="text" name="username" placeholder="Carnet (XX-XXX)" id="carnet" class="in-b"><span class="tooltip" name="tooltip"></span>
 				</div>
 
-				<div class="input-div b">
-					<span class="icon icon-key in-b"></span><input type="password" name="password" placeholder="Contraseña" id="contraseña" class="in-b inp"><span class="tooltip" name="tooltip"></span>
+				<div class="input b">
+					<span class="icon icon-key in-b"></span><input type="password" name="password" placeholder="Contraseña" id="contraseña" class="in-b"><span class="tooltip" name="tooltip"></span>
 				</div>
 
 				<input type="submit" name="login" value="Iniciar Sesión" class="btn center"><!-- Debo sustituir estos estilos en CSS -->

@@ -21,6 +21,7 @@
 				
 			</div>
 	<script type="text/javascript" src="Javascript/desplegar_chat.js" ></script>
+	<script type="text/javascript" src="Javascript/buscar.js"></script>
 
 </body>
 </html>

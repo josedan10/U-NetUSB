@@ -13,16 +13,17 @@ QUICK
 /*--- POR HACER ---*/
 
 1. Manejar jQuery para mejorar la UX y AJAX para realizar peticiones al servidor.
+2. AJAX se utilizará para generar sugerencias a la hora de hacer búsquedas.
 2. Establecer una base de datos y empezar a programar PHP.
-3. Revisar opciones para manipular el servidor (PHP u alguna otra herramienta).
+3. Revisar opciones para manipular el servidor (PHP, C, C++, Python, Ruby, Node.js u alguna otra herramienta).
 4. ¿Funcionaría usar Ruby?
 5. ¿Django funcionará para mantener la app de los salones virtuales?
 6. ¿React.js para qué?
 7. Java es necesario para desarrollar la app de Android.
 8. ¿Puedo usar C para algo?¿Algún script?
 9. Ethical Hacking para proteger el servidor web (puedo utilizar scripts de C, Python y PHP para protegerlo).
-10. ¿Cómo leer PDFs? Con Python Papuuu :D
-11. El horario no se actualizará en tiempo real.
+10. ¿Cómo leer PDFs? Con Python Papuuu :D¿?
+11. El horario no se actualizará en tiempo real, solo al confirmar.
 12. Crear clases CSS para cambiar estados con Javascript.
 13. Revisar la documentación de FalconMasters sobre OOCSS, Animate.css, propiedad z-index, screenFly, Bootstrap, Animaciones CSS, Transiciones CSS, Velocity para documentación sobre lenguajes de programación, Flexbox, AJAX, MarvelApp, LivePreview, ResponsiveDesign, CodePen.
 14. MaterialUp para agarra inspiración e ideas.

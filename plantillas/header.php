@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	<div class="buscador">
-		<span class="icon icon-magnifying-glass"></span><input type="text" placeholder="Buscar..." name="buscador">
+		<span class="icon icon-magnifying-glass" id="search_icon"></span><input type="text" placeholder="Buscar..." name="buscador" id="buscador">
 	</div>
 	<div class="busq_aux">
 		<a href=""><span class="icon icon-magnifying-glass"></span></a>
@@ -38,3 +38,4 @@
 		</ul>
 	</div>
 </header>
+<script type="text/javascript" src="../Javascript/buscar.js"></script>
