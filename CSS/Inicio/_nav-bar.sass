@@ -3,9 +3,10 @@ ul
 	list-style: none
 
 header
-	width: 80%
+	width: 100%
 	background-color: #4d79ff
 	position: fixed
+	left: 0
 	top:  0
 	padding: 0
 	height: 35px
@@ -101,10 +102,13 @@ header
 	position: relative
 	width: 40%
 
+.buscador:hover
+	cursor: pointer
+
 
 .buscador input
 	margin-top: 4px
-	padding: 3px
+	padding: 0px
 	float: left
 	background-color: transparent
 	border-style: none
@@ -112,7 +116,13 @@ header
 	border-radius: 5px
 	display: visible
 	color: white
-	width: 85%
+	width: 0
+	-webkit-transition: all .2s ease
+	-moz-transition: all .2s ease
+	-ms-transition: all .2s ease
+	-o-transition: all .2s ease
+	transition: all .2s ease
+
 
 
 .buscador span

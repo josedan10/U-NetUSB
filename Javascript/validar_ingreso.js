@@ -8,14 +8,29 @@
 			tooltipCarnet=tooltips[0],
 			tooltipContraseña=tooltips[1];
 
-		if(carnet.value==""||contraseña.value==""){
+		resetTooltips(tooltips);
+		validarCarnet(carnet,tooltipCarnet,e);
+		validarContraseña(contraseña,tooltipContraseña,e);
+
+		if(carnet.value==""){
 			alert("Debes completar todos los campos para ingresar");
 			e.preventDefault();
 			styleError(carnet);
+			//styleError(contraseña);
+		}else if(contraseña.value==""){
+			alert("Debes completar todos los campos para ingresar");
+			e.preventDefault();
 			styleError(contraseña);
 		}
-		validarCarnet(carnet,tooltipCarnet,e);
-		validarContraseña(contraseña,tooltipContraseña,e);
+
+		function resetTooltips (tooltips) {
+		var i;
+		for (i=0; i<tooltips.length;i++){
+			tooltips[i].style.visibility="hidden";
+		}
+	}
+
+		
 	}
 
 	var validarCarnet=function (carnet,tooltip,e) {
@@ -43,8 +58,10 @@
 			for (i in contraseña_array){
 				if(/\d/.test(contraseña_array[i])){
 					num++;
+					continue;
 				}else if (contraseña_array[i]==contraseña_array[i].toUpperCase()){
 					mayus++;
+					continue;
 				}
 			}
 

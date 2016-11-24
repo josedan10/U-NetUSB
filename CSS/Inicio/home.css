@@ -12,7 +12,7 @@ body {
 
 /*Estilos de la caja de contenidos */
 .content {
-  width: 80%;
+  width: 70%;
   max-width: 1000px;
   margin: 0 auto;
   background-color: #e6e6e6; }
@@ -22,9 +22,10 @@ ul {
   list-style: none; }
 
 header {
-  width: 80%;
+  width: 100%;
   background-color: #4d79ff;
   position: fixed;
+  left: 0;
   top: 0;
   padding: 0;
   height: 35px;
@@ -103,9 +104,12 @@ header {
   position: relative;
   width: 40%; }
 
+.buscador:hover {
+  cursor: pointer; }
+
 .buscador input {
   margin-top: 4px;
-  padding: 3px;
+  padding: 0px;
   float: left;
   background-color: transparent;
   border-style: none;
@@ -113,7 +117,12 @@ header {
   border-radius: 5px;
   display: visible;
   color: white;
-  width: 85%; }
+  width: 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
 
 .buscador span {
   display: inline-block;
@@ -195,7 +204,8 @@ nav ul li:hover span {
   width: 33.33%;
   position: relative;
   text-align: center;
-  padding: 5px; }
+  padding: 0px;
+  margin-top: 5px; }
 
 .containers {
   position: relative;
@@ -346,4 +356,4 @@ nav ul li:hover span {
   .user:hover menu {
     height: 100px; } }
 
-/*# sourceMappingURL=plantilla.css.map */
+/*# sourceMappingURL=home.css.map */
