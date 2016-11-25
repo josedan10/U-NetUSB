@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Perfil</title>
-	<link rel="stylesheet" type="text/css" href="profile.css">
-	<link rel="stylesheet" type="text/css" href="CSS/Inicio/plantilla.css">
-	<!-- En plantilla.css solo necesito los estilos del menu de navegación. Estoy
-	extrayendo información de más-->
-	<link rel="stylesheet" type="text/css" href="CSS/icons/style.css">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<div class="profile">
 
-</head>
-<body>
-
-	<div class="content">
-
-			<?php include'home/header.php'; ?>
-			<?php include'profile.php'; ?>
-			<?php include'home/chat.php'; ?>
-				
+		<section class="CV">
+			<div class="id">
+				<div class="picture"><img src=""></div>
+				<div class="info">
+					<h4>José Daniel Quintero Figueroa</h4>
+					<p><b>Carnet:</span> 14-10876</p>
+					<p><b>Carrera:</span> Lic. Matemáticas Estadísticas y Computacionales</p>
+					<p><b>Edad:</span> 19</p>
+				</div>
 			</div>
-	<script type="text/javascript" src="Javascript/desplegar_chat.js" ></script>
-	<script type="text/javascript" src="Javascript/buscar.js"></script>
+		</section>
 
-</body>
-</html>
+		<section class="academico">
+			<div class="indice"></div>
+			<div class="status"></div>
+
+		</section>
+
+	</div>
+	
