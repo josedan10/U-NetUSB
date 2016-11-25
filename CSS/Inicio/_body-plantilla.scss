@@ -1,11 +1,16 @@
-body
-	background: #ccc
-	font-family: 'Ubuntu', sans-serif
-	padding-bottom: 30px
+body{
+	background: #ccc;
+	font: $normal;
+	padding-bottom: 30px;
+}
+	
 
 /*Estilos de la caja de contenidos*/
-.content
-	width: 70%
-	max-width: 1000px
-	margin: 0 auto
-	background-color: #e6e6e6
+.content{
+	width: 70%;
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: #e6e6e6;
+
+}
+	
