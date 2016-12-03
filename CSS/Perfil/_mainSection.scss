@@ -1,0 +1,57 @@
+body{
+	background:$bgPage;
+	font: $normal;
+}
+
+
+.profile{
+	margin-top: 45px;
+	margin-left: 10px;
+}
+
+.CV{
+	//background:#007AFF;
+	width: 70%;
+	height: 600px;	
+}
+
+.id{
+	//background: rgba(76, 147, 211, .3);
+	position: relative;
+	//border-radius: 20% 10px 10px 20%;
+}
+
+.id .picture{
+	//height: 100px;
+	//margin-top: 10px;
+	border-radius: 50%;
+	border: solid #004590 5px;
+	width: 30%;
+	max-width: 150px;
+	position: relative;
+	z-index: 1;
+
+}
+
+.info{
+	box-sizing: content-box;
+	position: absolute;
+	margin-left: 10px;
+	background: rgba(76, 147, 211, .3);
+	padding-left: 89px;
+	left: 55px;
+	height: 150px;
+	width: 550px;
+	border-radius: 0 10px 10px 0;
+}
+
+h4{
+	font: $button;
+	position: relative;
+	margin: 15px 0;
+	//display: inline-block;
+}
+
+.info p{
+	box-sizing: content-box;
+}

@@ -1,3 +1,11 @@
+/*>>>>> Colores <<<<<*/
+$bgHeader: #4d79ff;
+$bgMenu: #0066cc;
+
+$aMenuHover: #6699ff;
+
+
+
 /*---ENCABEZADO---*/
 ul{
 	list-style: none;
@@ -5,14 +13,14 @@ ul{
 
 header{
 	width: 100%;
-	background-color: #4d79ff;
+	background-color: $bgHeader;
 	position: fixed;
 	left: 0;
 	top:  0;
 	padding: 0;
 	height: 35px;
 	/*Revisar*/
-	z-index: 1;
+	z-index: 2;
 }
 
 /*---MENÚ DE USUARIO---*/
@@ -36,7 +44,7 @@ header{
 	position: absolute;
 	left: 0;
 	top: 35px;
-	background-color: #0066cc;
+	background-color: $bgMenu;
 	min-width: 120px;
 	width: 20%;
 	overflow: hidden;
@@ -58,7 +66,7 @@ header{
 }
 
 .menu ul li a{
-	font-family: 'Roboto',sans-serif;
+	font: $normal;
 	color: white;
 	text-decoration: none;
 	display: block;
@@ -75,7 +83,7 @@ header{
 
 
 .menu ul li:hover a{
-	background-color: #6699ff;
+	background-color: $aMenuHover
 }
 
 
@@ -95,7 +103,7 @@ header{
 
 
 .user:hover .menu{
-	height: 128px;
+	height: 124px;
 }
 	
 
@@ -113,11 +121,13 @@ header{
 	height: 35px;
 	position: relative;
 	width: 40%;
+	background: transparent;
 	
 }
 
 .buscador:hover{
-	cursor: pointer;;
+	cursor: pointer;
+	font: $navFont;
 }
 
 
@@ -149,7 +159,7 @@ header{
 	padding: 0 10px;
 	margin-top: 10px;
 	color: #fff;
-	
+	font: $navFont;
 }
 
 
@@ -167,6 +177,7 @@ nav ul li{
 	height: 100%;
 	box-sizing: border-box;
 	position: relative;
+	background: $bgHeader;
 	
 }
 
@@ -177,9 +188,9 @@ nav ul li a{
 	width: 76px;
 	text-decoration: none;
 	padding: 8px 4px 9px;
-	font-size: 14px;
-	font-family: 'Play',sans-serif;
+	font: $navFont;
 	color: #fff;
+	background: $bgHeader;
 	
 }
 
@@ -190,7 +201,7 @@ nav ul li span{
 	top: -35px;
 	left: 0;
 	background-color: #ccd9ff;
-	color: #6699ff;
+	color: $bgHeader;
 	width: 76px;
 	box-sizing: border-box;
 	height: 35px;

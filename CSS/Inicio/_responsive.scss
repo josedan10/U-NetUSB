@@ -15,6 +15,10 @@
 		display: none;
 	}
 	
+	.content{
+		width: 100%;
+	}
+	
 
 	.busq_aux{
 		display: inline-block;
@@ -120,12 +124,7 @@
 @media screen and (max-width: 550px){
 	body{
 		font-size: 10px;
-	}
-	
-	.content{
-		width: 100%;
-	}
-	
+	}	
 
 	header{
 		width: 100%;
@@ -145,8 +144,8 @@
 		
 	}
 
-	.user:hover menu{
-		height: 100px;
+	.user:hover .menu{
+		height: 104.5px;
 	}
 	
 }

@@ -125,7 +125,7 @@
 					e.preventDefault();
 
 				}if(contraseña2.value==""){
-					tooltip2.innerHTML="*Error en la validación de la contraseña";
+					tooltip2.innerHTML="*No ha validado la contraseña";
 					tooltip2.style.visibility="visible";
 					styleError(contraseña2);
 					e.preventDefault();

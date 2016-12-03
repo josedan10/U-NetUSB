@@ -1,5 +1,5 @@
 body{
-	background: #ccc;
+	background: $bgPage;
 	font: $normal;
 	padding-bottom: 30px;
 }
@@ -10,7 +10,7 @@ body{
 	width: 70%;
 	max-width: 1000px;
 	margin: 0 auto;
-	background-color: #e6e6e6;
+	background-color: $bgContent;
 
 }
 	

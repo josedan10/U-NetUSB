@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/*UTF-8*/
+@import "https://fonts.googleapis.com/css?family=Play|Russo One|Roboto:300,400,700";
+/*--- Colores del home ---*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.in-b {
+  display: inline-block; }
+
+/*--- Estilo normal ---*/
+/*--- Estilo de título ---*/
+/*--- Estilo del botón ---*/
+/*--- Estilo de la navBar*/
+/*--- Dropdown Profile Menu ---*/
+/*--- Tooltips ---*/
+/*--- Estilo de footer ---*/
+/*>>>>> Colores <<<<<*/
+/*---ENCABEZADO---*/
+ul {
+  list-style: none; }
+
+header {
+  width: 100%;
+  background-color: #4d79ff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0;
+  height: 35px;
+  /*Revisar*/
+  z-index: 2; }
+
+/*---MENÚ DE USUARIO---*/
+.user {
+  display: inline-block;
+  width: 40px;
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease; }
+
+.menu {
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 35px;
+  background-color: #0066cc;
+  min-width: 120px;
+  width: 20%;
+  overflow: hidden;
+  /*Revisar los índices*/
+  z-index: -1;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease; }
+
+.menu ul {
+  list-style: none; }
+
+.menu ul li a {
+  font: 14px "Roboto", sans-serif;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 7px 5px;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease; }
+
+.menu ul li:hover a {
+  background-color: #6699ff; }
+
+.menu ul li a span {
+  margin-right: 10px; }
+
+.img-user {
+  width: 33px;
+  margin-top: 1px;
+  margin-left: 10px;
+  display: block;
+  border-radius: 50%; }
+
+.user:hover .menu {
+  height: 124px; }
+
+.user, nav li, .buscador {
+  display: inline-block; }
+
+/*---BÚSQUEDA---*/
+.buscador {
+  margin-left: 100px;
+  padding-top: 0;
+  height: 35px;
+  position: relative;
+  width: 40%;
+  background: transparent; }
+
+.buscador:hover {
+  cursor: pointer;
+  font: 14px "Play", sans-serif; }
+
+.buscador input {
+  margin-top: 4px;
+  padding: 0px;
+  float: left;
+  background-color: transparent;
+  border-style: none;
+  border-bottom: solid 1px #fff;
+  border-radius: 5px;
+  display: visible;
+  color: white;
+  width: 0;
+  opacity: 0;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.buscador span {
+  display: inline-block;
+  float: left;
+  padding: 0 10px;
+  margin-top: 10px;
+  color: #fff;
+  font: 14px "Play", sans-serif; }
+
+/*---BARRA DE NAVEGACIÓN---*/
+nav {
+  display: inline-block;
+  float: right; }
+
+nav ul li {
+  float: left;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background: #4d79ff; }
+
+nav ul li a {
+  display: inline-block;
+  text-align: center;
+  width: 76px;
+  text-decoration: none;
+  padding: 8px 4px 9px;
+  font: 14px "Play", sans-serif;
+  color: #fff;
+  background: #4d79ff; }
+
+nav ul li span {
+  display: block;
+  position: absolute;
+  top: -35px;
+  left: 0;
+  background-color: #ccd9ff;
+  color: #4d79ff;
+  width: 76px;
+  box-sizing: border-box;
+  height: 35px;
+  padding: 8px 10px 9px;
+  font-size: 16px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+nav ul li:hover span {
+  position: absolute;
+  top: 0; }
+
+/*Navegación auxliar no disponible*/
+.nav_aux {
+  display: none; }
+
+.busq_aux {
+  display: none; }
+
+/*--- Colores ---*/
+/*---CHAT---*/
+.chat {
+  min-height: 30px;
+  width: 230px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  background: #9B79FF;
+  overflow: hidden; }
+
+.chat_btn {
+  color: white;
+  font: 14px "Roboto", sans-serif;
+  width: 100%;
+  height: 30px;
+  padding: 4px 0;
+  z-index: 1;
+  background: #5700EB;
+  border: none; }
+
+.srch {
+  margin: 0 auto;
+  z-index: -1;
+  width: 95%;
+  position: absolute;
+  bottom: 5px;
+  left: 5px; }
+
+body {
+  background: #ccc;
+  font: 14px "Roboto", sans-serif; }
+
+.profile {
+  margin-top: 45px;
+  margin-left: 10px; }
+
+.CV {
+  width: 70%;
+  height: 600px; }
+
+.id {
+  position: relative; }
+
+.id .picture {
+  border-radius: 50%;
+  border: solid #004590 5px;
+  width: 30%;
+  max-width: 150px;
+  position: relative;
+  z-index: 1; }
+
+.info {
+  box-sizing: content-box;
+  position: absolute;
+  margin-left: 10px;
+  background: rgba(76, 147, 211, 0.3);
+  padding-left: 89px;
+  left: 55px;
+  height: 150px;
+  width: 550px;
+  border-radius: 0 10px 10px 0; }
+
+h4 {
+  font: 20px "Play", sans-serif;
+  position: relative;
+  margin: 15px 0; }
+
+.info p {
+  box-sizing: content-box; }
+
+/*# sourceMappingURL=perfil.css.map */

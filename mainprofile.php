@@ -1,19 +1,24 @@
 	<div class="profile">
 
-		<section class="CV">
+		<section class="CV in-b">
 			<div class="id">
-				<div class="picture"><img src=""></div>
-				<div class="info">
+				<img src="images/me.jpg" class="picture in-b">
+				<div class="info in-b">
 					<h4>José Daniel Quintero Figueroa</h4>
-					<p><b>Carnet:</span> 14-10876</p>
-					<p><b>Carrera:</span> Lic. Matemáticas Estadísticas y Computacionales</p>
-					<p><b>Edad:</span> 19</p>
+					<p><span>Carnet:</span> 14-10876</p>
+					<p><span>Carrera:</span> Lic. Matemáticas Estadísticas y Computacionales</p>
+					<p><span>Edad:</span> 19</p>
 				</div>
+			</div>
+			<div class="description">
+				
 			</div>
 		</section>
 
-		<section class="academico">
-			<div class="indice"></div>
+		<section class="academico in-b">
+			<div class="indice">
+				
+			</div>
 			<div class="status"></div>
 
 		</section>

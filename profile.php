@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Perfil</title>
-	<link rel="stylesheet" type="text/css" href="profile.css">
-	<link rel="stylesheet" type="text/css" href="CSS/Inicio/home.css">
+	<!-- <link rel="stylesheet" type="text/css" href="profile.css"> -->
+	<link rel="stylesheet" type="text/css" href="CSS/Perfil/perfil.css">
 	<!-- En plantilla.css solo necesito los estilos del menu de navegación. Estoy
 	extrayendo información de más-->
 	<link rel="stylesheet" type="text/css" href="CSS/icons/style.css">
