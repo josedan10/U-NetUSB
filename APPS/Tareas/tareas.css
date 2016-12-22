@@ -71,11 +71,11 @@ body {
   background: #D8D8D8;
   padding: 0;
   border: none;
-  -webkit-transition: height .3s ease;
-  -moz-transition: height .3s ease;
-  -ms-transition: height .3s ease;
-  -o-transition: height .3s ease;
-  transition: height .3s ease; }
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
   .detalles .avisos {
     width: 15%;
     text-align: center; }
