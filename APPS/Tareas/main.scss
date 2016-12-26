@@ -67,6 +67,8 @@ body{
 .fecha{
 	text-align: center;
 	width:15%;
+	min-width: 66px;
+
 }
 
 .block-header{
@@ -80,6 +82,7 @@ body{
 	font-size: 18px;
 	.icon{
 		margin-left: 20px;
+		cursor: pointer;
 	}
 }
 
@@ -119,4 +122,57 @@ body{
 	-ms-transition: all .3s ease;
 	-o-transition: all .3s ease;
 	transition: all .3s ease;
+}
+
+.divFantasma{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,.3);
+	display: none;
+	z-index: 5;
+	top: 0;
+
+	.cerradura{
+		text-align: right;
+		font-size: 25px;
+		padding: 10px;
+
+		.icon{
+			cursor: pointer;
+		}
+	}
+
+	.tareaBox{
+		padding: 20px;
+		width: 75%;
+		max-width: 500px;
+		height: 40%;
+		min-height: 400px;
+		background: #EEF0FF;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+
+		input{
+			height: 30px;
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		
+		textarea{
+			width: 100%;
+			resize: none;
+			min-height: 100px; 
+		}
+	}
+}
+
+@media screen and (max-width: 840px){
+	.block{
+		width: 100%;
+		font-size: 14px;	
+	}
 }

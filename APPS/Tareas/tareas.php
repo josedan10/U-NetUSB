@@ -74,6 +74,10 @@
 		</div>
 	</div>
 
+	<div id="divFantasma" class="divFantasma">
+		<div class="cerradura" id="cerradura"><span class="icon icon-cross"></span></div>
+	</div>
+
 
 	<!-- Scripts -->
 	<script src="Tareas.js"></script>
