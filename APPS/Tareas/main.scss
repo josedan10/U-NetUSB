@@ -167,6 +167,22 @@ body{
 			resize: none;
 			min-height: 100px; 
 		}
+
+		button{
+			margin-top: 10px;
+			background: #0066cc;
+			border: none;
+			padding: 5px;
+			color: #fff;
+		}
+
+		button:hover{
+			cursor: pointer;
+		}
+
+		button:active{
+			background: #000;//Buscar color para click
+		}
 	}
 }
 

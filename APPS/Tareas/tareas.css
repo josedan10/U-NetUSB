@@ -127,6 +127,16 @@ body {
       width: 100%;
       resize: none;
       min-height: 100px; }
+    .divFantasma .tareaBox button {
+      margin-top: 10px;
+      background: #0066cc;
+      border: none;
+      padding: 5px;
+      color: #fff; }
+    .divFantasma .tareaBox button:hover {
+      cursor: pointer; }
+    .divFantasma .tareaBox button:active {
+      background: #000; }
 
 @media screen and (max-width: 840px) {
   .block {

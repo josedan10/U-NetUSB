@@ -15,6 +15,7 @@
 
 		infoArray = document.getElementsByClassName('detalles'),
 		cerraduraTareaNueva = document.getElementById('cerradura').firstChild,
+		// botonAgregar = document.getElementById('botonAgregar'),
 		divFantasma = document.getElementById("divFantasma"); /*Array de infos*/
 
 	//console.log(checksCol[0].firstChild);
@@ -178,10 +179,14 @@
 			idInicio.appendChild(texto);
 			formNuevaTarea.appendChild(idInicio);
 			formNuevaTarea.appendChild(inicioTarea);
+			formNuevaTarea.appendChild(inicioTarea);
+			formNuevaTarea.appendChild(inicioTarea);
 
 			texto = document.createTextNode("Final");
 			idFinal.appendChild(texto);
 			formNuevaTarea.appendChild(idFinal);
+			formNuevaTarea.appendChild(finalTarea);
+			formNuevaTarea.appendChild(finalTarea);
 			formNuevaTarea.appendChild(finalTarea);
 
 			texto = document.createTextNode("Descripción");
@@ -191,7 +196,119 @@
 
 			tareaBox.appendChild(formNuevaTarea);
 
+			var button = document.createElement("button");
+			
+			var valor = document.createTextNode("Agregar Tarea");
+			button.setAttribute("id","agregarTarea");
+			button.appendChild(valor);
+			formNuevaTarea.appendChild(button);
+			bl.button = button;
+			console.log(bl.button);
+
+			bl.button.addEventListener("click",agregarTarea);
+
+
 		};
+
+		var agregarTarea = function(e){
+			
+			var nombre = document.getElementById("Nombre");
+			var inicio = document.getElementById("inicio");
+			var final = document.getElementById("final");
+			var descripcion = document.getElementById("descripcion");
+			var block = document.getElementById("block");
+
+			var divNuevo = document.createElement("div");
+			divNuevo.setAttribute("class", "rows");
+
+			var checkboxNuevoDiv = document.createElement("div");
+			checkboxNuevoDiv.setAttribute("class", "checkbox");
+
+			var checkboxNuevo = document.createElement("input");
+			checkboxNuevo.setAttribute("type", "checkbox");
+
+			checkboxNuevoDiv.appendChild(checkboxNuevo);
+
+			divNuevo.appendChild(checkboxNuevoDiv);
+
+			var actividadNueva = document.createElement("div");
+			actividadNueva.setAttribute("class", "actividad");
+
+			var actividadNombre = document.createTextNode(nombre.value);
+			actividadNueva.appendChild(actividadNombre);
+
+			divNuevo.appendChild(actividadNueva);
+
+			var inicioNuevo = document.createElement("div");
+			inicioNuevo.setAttribute("class", "fecha");
+			var inicioValor = document.createTextNode(inicio.value);
+			inicioNuevo.appendChild(inicioValor);
+
+			divNuevo.appendChild(inicioNuevo);
+
+			var finalNuevo = document.createElement("div");
+			finalNuevo.setAttribute("class", "fecha");
+			var finalValor = document.createTextNode(final.value);
+			finalNuevo.appendChild(finalValor);
+
+			divNuevo.appendChild(finalNuevo);
+
+			// console.log(actividadNueva);
+			// console.log(actividadNueva.firstChild);
+
+			bl.block.appendChild(divNuevo);
+			divFantasma.style.display = "none";
+			var tareaBox = divFantasma.getElementsByClassName("tareaBox")[0];
+			divFantasma.removeChild(tareaBox);
+
+			var divDetallesNuevo = document.createElement("div");
+			divDetallesNuevo.setAttribute("class", "rows detalles");
+
+			var divAvisosNuevo = document.createElement("div");
+			divAvisosNuevo.setAttribute("class", "avisos");
+			var iconAvisos = document.createElement("span");
+			iconAvisos.setAttribute("class", "icon icon-megaphone");
+			divAvisosNuevo.appendChild(iconAvisos);
+
+			divDetallesNuevo.appendChild(divAvisosNuevo);
+
+			var divInfoNuevo = document.createElement("div");
+			divInfoNuevo.setAttribute("class", "info");
+			var detallesNuevo = document.createTextNode(descripcion.value);
+			divInfoNuevo.appendChild(detallesNuevo);
+			divDetallesNuevo.appendChild(divInfoNuevo);
+
+			var divEdicionesNuevo = document.createElement("div");
+			divEdicionesNuevo.setAttribute("class", "ediciones");
+
+			var iconEditNuevo = document.createElement("span");
+			iconEditNuevo.setAttribute("class", "icon icon-edit");
+			divEdicionesNuevo.appendChild(iconEditNuevo);
+
+			var iconShareNuevo = document.createElement("span");
+			iconShareNuevo.setAttribute("class", "icon icon-share");
+			divEdicionesNuevo.appendChild(iconShareNuevo);
+
+			divDetallesNuevo.appendChild(divEdicionesNuevo);
+
+
+			bl.block.appendChild(divDetallesNuevo);
+
+			infoArray = document.getElementsByClassName('detalles');
+
+
+			for (var i = 1; i <= infoArray.length; i++){
+				//console.log(bl.actividades[i]);
+
+				bl.actividades[i].addEventListener("click", detalles);
+			}
+
+
+			alert("Tarea agregada exitosamente");
+
+			e.preventDefault();
+
+		}
 
 		var cerrarTareaNueva = function(){
 			divFantasma.style.display = "none";
@@ -219,8 +336,6 @@
 
 
 		bl.checkMaster.addEventListener("change", checkAll);
-
-
 
 		
 
