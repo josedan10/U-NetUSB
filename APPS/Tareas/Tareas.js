@@ -103,10 +103,17 @@
 				for (var count = 0; count < checksCol.length; count++){
 					bl.checksCol[count].firstChild.checked = true;
 				}
+
+				bl.tareaNueva.classList.remove("icon-squared-plus");
+				bl.tareaNueva.classList.add("icon-trash");
+
 			}else{
 				for (var count = 0; count < checksCol.length; count++){
 					bl.checksCol[count].firstChild.checked = false;
 				}
+
+				bl.tareaNueva.classList.remove("icon-trash");
+				bl.tareaNueva.classList.add("icon-squared-plus");
 			}
 
 		};
@@ -126,7 +133,17 @@
 					if (bl.checksCol[i].firstChild.checked){
 						checkeds++;
 					}
+
+					if (checkeds >= 1){
+						bl.tareaNueva.classList.remove("icon-squared-plus");
+						bl.tareaNueva.classList.add("icon-trash");
+					}else if(checkeds == 0){
+						bl.tareaNueva.classList.remove("icon-trash");
+						bl.tareaNueva.classList.add("icon-squared-plus");	
+					}
 				}
+
+
 
 				if (checkeds == checks){
 					bl.checkMaster.firstChild.checked = true;
@@ -138,80 +155,104 @@
 
 		var crearTarea = function(){
 
-			//Creamos dinámicamente el formulario para recibir la nueva tarea
-			
-			divFantasma.style.display = "block";
-			var tareaBox = document.createElement("div");
-			tareaBox.classList.add("tareaBox");
-			divFantasma.appendChild(tareaBox);
+			if(this.classList[1]=="icon-squared-plus"){
 
-			var formNuevaTarea = document.createElement("form");
+				//Creamos dinámicamente el formulario para recibir la nueva tarea
+				
+				divFantasma.style.display = "block";
+				var tareaBox = document.createElement("div");
+				tareaBox.classList.add("tareaBox");
+				divFantasma.appendChild(tareaBox);
 
-			var nombreTarea = document.createElement("input");
-			nombreTarea.setAttribute("id","Nombre");
-			var idNombre = document.createElement("label");
-			idNombre.setAttribute("for","Nombre");
+				var formNuevaTarea = document.createElement("form");
 
-			var inicioTarea = document.createElement("input");
-			inicioTarea.setAttribute("id","inicio");
-			var idInicio = document.createElement("label");
-			idInicio.setAttribute("for","inicio");
+				var nombreTarea = document.createElement("input");
+				nombreTarea.setAttribute("id","Nombre");
+				var idNombre = document.createElement("label");
+				idNombre.setAttribute("for","Nombre");
 
-			var finalTarea = document.createElement("input");
-			finalTarea.setAttribute("id","final");
-			var idFinal = document.createElement("label");
-			idFinal.setAttribute("for","final");
+				var inicioTarea = document.createElement("input");
+				inicioTarea.setAttribute("id","inicio");
+				var idInicio = document.createElement("label");
+				idInicio.setAttribute("for","inicio");
 
-			var descripcionTarea = document.createElement("textarea");
-			descripcionTarea.setAttribute("id","descripcion");
-			var idDescrip = document.createElement("label");
-			idDescrip.setAttribute("for","descripcion");
+				var finalTarea = document.createElement("input");
+				finalTarea.setAttribute("id","final");
+				var idFinal = document.createElement("label");
+				idFinal.setAttribute("for","final");
 
-			var texto;
+				var descripcionTarea = document.createElement("textarea");
+				descripcionTarea.setAttribute("id","descripcion");
+				var idDescrip = document.createElement("label");
+				idDescrip.setAttribute("for","descripcion");
 
-			texto = document.createTextNode("Nombre");
+				var texto;
 
-			idNombre.appendChild(texto);
-			formNuevaTarea.appendChild(idNombre);
-			formNuevaTarea.appendChild(nombreTarea);
+				texto = document.createTextNode("Nombre");
 
-			texto = document.createTextNode("Inicio");
-			idInicio.appendChild(texto);
-			formNuevaTarea.appendChild(idInicio);
-			formNuevaTarea.appendChild(inicioTarea);
-			formNuevaTarea.appendChild(inicioTarea);
-			formNuevaTarea.appendChild(inicioTarea);
+				idNombre.appendChild(texto);
+				formNuevaTarea.appendChild(idNombre);
+				formNuevaTarea.appendChild(nombreTarea);
 
-			texto = document.createTextNode("Final");
-			idFinal.appendChild(texto);
-			formNuevaTarea.appendChild(idFinal);
-			formNuevaTarea.appendChild(finalTarea);
-			formNuevaTarea.appendChild(finalTarea);
-			formNuevaTarea.appendChild(finalTarea);
+				texto = document.createTextNode("Inicio");
+				idInicio.appendChild(texto);
+				formNuevaTarea.appendChild(idInicio);
+				formNuevaTarea.appendChild(inicioTarea);
+				formNuevaTarea.appendChild(inicioTarea);
+				formNuevaTarea.appendChild(inicioTarea);
 
-			texto = document.createTextNode("Descripción");
-			idDescrip.appendChild(texto);
-			formNuevaTarea.appendChild(idDescrip);
-			formNuevaTarea.appendChild(descripcionTarea);
+				texto = document.createTextNode("Final");
+				idFinal.appendChild(texto);
+				formNuevaTarea.appendChild(idFinal);
+				formNuevaTarea.appendChild(finalTarea);
+				formNuevaTarea.appendChild(finalTarea);
+				formNuevaTarea.appendChild(finalTarea);
 
-			tareaBox.appendChild(formNuevaTarea);
+				texto = document.createTextNode("Descripción");
+				idDescrip.appendChild(texto);
+				formNuevaTarea.appendChild(idDescrip);
+				formNuevaTarea.appendChild(descripcionTarea);
 
-			var button = document.createElement("button");
-			
-			var valor = document.createTextNode("Agregar Tarea");
-			button.setAttribute("id","agregarTarea");
-			button.appendChild(valor);
-			formNuevaTarea.appendChild(button);
-			bl.button = button;
-			console.log(bl.button);
+				tareaBox.appendChild(formNuevaTarea);
 
-			bl.button.addEventListener("click",agregarTarea);
+				var button = document.createElement("button");
+				
+				var valor = document.createTextNode("Agregar Tarea");
+				button.setAttribute("id","agregarTarea");
+				button.appendChild(valor);
+				formNuevaTarea.appendChild(button);
+				bl.button = button;
+				//console.log(bl.button);
+
+				bl.button.addEventListener("click",agregarTarea);
+			}else{
+
+				var respuesta;
+				checksCol = document.getElementsByClassName("checkbox");
+
+				if (bl.checkMaster.firstChild.checked){
+					respuesta = confirm("Estas apunto de eliminar todas las tareas.\nHaga click en 'ok' para confirmar el proceso");
+					if (respuesta){
+						alert("Tareas borradas");
+					}else{
+						alert("Proceso cancelado");
+					}
+				}else{
+					for (var i = 0; i < infoArray.lenght; i++){
+						if (bl.checksCol[i].firstChild.checked){
+							alert("El check numero "+i+" será borrado");
+						}
+					}
+				}
+				
+			}
+
 
 
 		};
 
 		var agregarTarea = function(e){
-			
+
 			var nombre = document.getElementById("Nombre");
 			var inicio = document.getElementById("inicio");
 			var final = document.getElementById("final");
@@ -305,6 +346,7 @@
 
 
 			alert("Tarea agregada exitosamente");
+			
 
 			e.preventDefault();
 
