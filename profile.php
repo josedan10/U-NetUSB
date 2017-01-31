@@ -8,6 +8,7 @@
 	<!-- En plantilla.css solo necesito los estilos del menu de navegación. Estoy
 	extrayendo información de más-->
 	<link rel="stylesheet" type="text/css" href="CSS/icons/style.css">
+	<link rel="icon" type="image/ico" href="images/favicon.ico">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 </head>
