@@ -1,6 +1,146 @@
 (function(){
 
+	/*                      DIAGRAMA DE VARIABLES Y FUNCIONES                    */
+	/*_______________________________________________________________________________________________________________*/
+	/*_______________________________________________________________________________________________________________*/
+	/*_______________________________________________________________________________________________________________*/
+	/*_______________________________________________________________________________________________________________|
+
+	La variable 'blockTareas' es un objeto de tipo 'Block'.
+		
+
+		Descripcion de variables globales:
+		
+		> block
+			Elemento: div
+			id: block
+			clases: block
+			Padre: div.container
+			Descripcion: Instanciar a la clase 'Block'
+
+		> tareaNueva
+			Elemento: span
+			id: crearActividad
+			clases: icon icon-squared-plus, icon icon-trash
+			Padre: div.opciones
+			Descripcion: Se usa para agregar una tarea o para eliminar una tarea
+
+		> config
+			Elemento: span
+			id: config
+			clases: icon icon-cog
+			Padre: div.opciones
+			DEscripcion: Despliega el panel de opciones
+
+		> checksCol
+			Elemento: div->array
+			id: -
+			clases: -
+			Padre: -
+			Descripcion: Contiene todos los divs que contienen elementos inputs de tipo 'checkbox'
+
+		> checkMaster
+			Elemento: div
+			id: checkMaster
+			clases: checkMaster
+			Padre: div.secciones
+			Descripcion: Contiene el input master
+
+		> actividades
+			Elemento: div->array
+			id: -
+			clases: -
+			Padre: -
+			Descripcion: Contiene todos los divs de clase actividad, es decir, todos los divs donde van las 
+			actividades
+
+		> rows
+			Elemento: div->array
+			id: -
+			clases: -
+			Padre: -
+			Descripcion: Contiene cada fila que divide las tareas. Los rows de clase 'detalles' son los detalles del
+			row anterior
+
+		> infoArray
+			Elemento: div->array
+			id: -
+			clases: -
+			Padre: -
+			Descripcion: Contiene todos los divs de detalles que contienen la informacion de las tareas
+
+		> cerraduraTareaNueva
+			Elemento: div
+			id: cerradura
+			clases: cerradura
+			Padre: div.divFantasma#divFantasma
+			Descripcion: Contiene un elemento span que cierra el cuadro fantasma para agregar la nueva tarea
+			
+		> divFantasma
+			Elemento: div
+			id:	divFantasma
+			clases: divFantasma
+			Padre: html
+			Descripcion: Div que contiene el cuadro para agregar las nuevas tareas
+
+		
+
+
+		Descripcion de metodos del objeto 'Block':
+		
+		> detalles
+			Input: -
+			Output: -
+			Evento: Click en detalles
+			Descripcion: Este metodo muestra u oculta los detalles de una actividad
+
+		> checkAll
+			Input: -
+			Output: -
+			Evento: Check en checkMaster
+			Descripcion: Este metodo marca o desmarca todos los checks al mismo tiempo, ademas cambia el icono de 
+			agregar tarea por el de eliminar tareas
+
+		> checkOne
+			Input: -
+			Output: -
+			Evento: Check algun checkbox
+			Descripcion: Este método cambia el icono de agregar por el de basura
+
+		> crearTarea
+			Input: -
+			Output: -
+			Evento: Click en icono de agregar tareas
+			Descripcion: Esta funcion agrega y quita las tareas ya que el mismo elemento cumple las dos funciones.
+			Dependiendo de a clase que tenga elimina o agrega una tarea. Al agregar tareas, este formulario se crea
+			dinamicamente
+
+		> agregarTarea
+			Input: -
+			Output: -
+			Evento: Click en el boton de agregar tarea del formulario creado por 'crearTarea'
+			Descripcion: Esta funcion escribe los datos obtenidos mediante el formulario del divFantasma en el block 
+			de tareas
+
+		> eliminarTarea
+			Input: Array con los índices de los checks que están marcados
+			Output: -
+			Evento: Click en el icono de basura
+			Descripcion: Esta funcion elimina las tareas que esten seleccionadas
+
+		> eliminarTodasTareas
+			Input: -
+			Output: -
+			Evento: Click en el icono de basura cuando el checkMaster esta marcado
+			Descripcion: Esta funcion elimina TODAS las tareas
+
+	|________________________________________________________________________________________________________________*/
+
+
+
+
 	/*>>>>>>>>>>>>>>>>>> GLOBALS <<<<<<<<<<<<<<<<<*/
+
 
 	var block = document.getElementById('block'), /*block de actividades*/
 		tareaNueva = document.getElementById('crearActividad'), /*Icono para crear una nueva tarea*/
@@ -8,17 +148,15 @@
 		checksCol = block.getElementsByClassName('checkbox'), /*Columna de checkboxes*/
 		checkMaster = document.getElementById('checkMaster'), /*Check que marca todos los checkbox*/
 		actividades = document.getElementsByClassName('actividad'), /*Lista de actividades*/
+		rows = document.getElementsByClassName('rows');/*Array de filas de cada actividad*/
 
 		/*--------- IMPORTANTE --------*/
-		/*Para las actividades trabajar con un contador que empiece en cero.
-		El primer elemento es el título de la sección de actividades "Actividad"*/
+		/*Para las actividades trabajar con un contador que empiece en uno.
+		El primer elemento es el titulo de la seccion de actividades "Actividad"*/
 
-		infoArray = document.getElementsByClassName('detalles'),
+		infoArray = document.getElementsByClassName('detalles'),/*Array de infos*/
 		cerraduraTareaNueva = document.getElementById('cerradura').firstChild,
-		// botonAgregar = document.getElementById('botonAgregar'),
-		divFantasma = document.getElementById("divFantasma"); /*Array de infos*/
-
-	//console.log(checksCol[0].firstChild);
+		divFantasma = document.getElementById("divFantasma"); 
 
 
 
@@ -31,6 +169,7 @@
 		bl = {};
 
 		bl.block = block;
+		bl.rows = rows;
 		bl.tareaNueva = tareaNueva;
 		bl.actividades = actividades;
 		bl.infoArray = infoArray;
@@ -38,26 +177,37 @@
 		bl.checkMaster = checkMaster;
 		bl.checksCol = checksCol;
 		bl.cerraduraTareaNueva = cerraduraTareaNueva;
+		bl.eliminarTarea = eliminarTarea;
 
 
 		/*>>>>>>>>>>>>>>>>>>>>>>>>> FUNCIONES DE EVENTOS <<<<<<<<<<<<<<<<<<<<<<<*/
 		var detalles = function(){
-			/*
-				Este método muestra u oculta los detalles de la actividad
-			*/
 
 			var j;
 
+			/* Eliminamos de todas las actividades la clase 'active' */
+
 			for (j = 1; j < actividades.length; j++){
-				//console.log(actividades[j]);
 				actividades[j].classList.remove("active");
 			}
 
+			/* Agregamos la clase 'active' solamente a esta actividad */
+
 			this.classList.add('active');
+
+			/* Esta bandera simplemente noes indicara si hay alguna actividad con la clase 'active' */
 
 			var flag = false, k, clase;
 
 			j = 1;
+
+			/*
+
+			Contadores:
+				j->actividades
+				k->clases de la actividad actual
+
+			*/
 
 			while (j < actividades.length){
 
@@ -76,7 +226,12 @@
 				j++;
 			}
 
+			/*Como hay una actividad mas (el div de informacion 'Actividad' tambien cuenta), entonces la informacion
+			correspondiente es infoArray[j-1]*/
+
 			var info = infoArray[j-1];
+
+			/*Si esta oculta la actividad la mostramos, si no hacemos lo contrario*/
 
 			var altura = info.style.height;
 
@@ -89,17 +244,14 @@
 				info.style.padding = "0";
 				info.style.marginTop = "0";
 			}
-
-			
 		}
 
 
 
 		var checkAll = function(){
 
-			//console.log("Click en el check");
+			
 			if (bl.checkMaster.firstChild.checked){
-				//console.log("Esta chequeado");
 				for (var count = 0; count < checksCol.length; count++){
 					bl.checksCol[count].firstChild.checked = true;
 				}
@@ -122,7 +274,6 @@
 
 		var checkOne = function(){
 
-			//console.log(this);
 			if (!this.checked && checkMaster.firstChild.checked){
 				bl.checkMaster.firstChild.checked = false;
 			}else{
@@ -144,7 +295,6 @@
 				}
 
 
-
 				if (checkeds == checks){
 					bl.checkMaster.firstChild.checked = true;
 				}
@@ -155,9 +305,13 @@
 
 		var crearTarea = function(){
 
+			/*Crear y eliminar la tarea se manejan con el mismo boton, por eso estan dentro de la misma funcion
+				Verificar la clase del boton nos dice si va a borrar o va a agregar una tarea*/
+
+
 			if(this.classList[1]=="icon-squared-plus"){
 
-				//Creamos dinámicamente el formulario para recibir la nueva tarea
+				//Creamos dinamicamente el formulario para recibir la nueva tarea
 				
 				divFantasma.style.display = "block";
 				var tareaBox = document.createElement("div");
@@ -222,26 +376,85 @@
 				button.appendChild(valor);
 				formNuevaTarea.appendChild(button);
 				bl.button = button;
-				//console.log(bl.button);
 
 				bl.button.addEventListener("click",agregarTarea);
 			}else{
 
-				var respuesta;
-				checksCol = document.getElementsByClassName("checkbox");
+				/*Eliminamos la tarea*/
+
+				var respuesta, nroAct = 0;
 
 				if (bl.checkMaster.firstChild.checked){
 					respuesta = confirm("Estas apunto de eliminar todas las tareas.\nHaga click en 'ok' para confirmar el proceso");
 					if (respuesta){
+
+						eliminarTodasTareas();
+						this.classList.remove("icon-trash");
+						this.classList.add("icon-squared-plus");
+						bl.checkMaster.firstChild.checked = false;
 						alert("Tareas borradas");
+
 					}else{
+
 						alert("Proceso cancelado");
+
 					}
 				}else{
-					for (var i = 0; i < infoArray.lenght; i++){
+
+					var tarea, totalActividades = 0, i;
+
+					for (i = 0; i < infoArray.length; i++){
 						if (bl.checksCol[i].firstChild.checked){
-							alert("El check numero "+i+" será borrado");
+							totalActividades++;
+							tarea = i;
 						}
+					}
+
+					if (totalActividades==1){
+						
+						respuesta = confirm("Se eliminará una tarea. \nHaga click en 'ok' para confirmar");
+
+						if (respuesta){
+
+							eliminarTarea(tarea);
+
+							alert("Tarea eliminada");
+							this.classList.remove("icon-trash");
+							this.classList.add("icon-squared-plus");
+
+						}else{
+
+							alert("Proceso cancelado");
+
+						}
+					}else{
+
+						respuesta = confirm("Se eliminarán "+totalActividades+ " tareas.\nHaga click en 'ok' para confirmar");
+
+						if (respuesta){
+
+							i=0;
+							while(i < bl.checksCol.length){
+
+								if (bl.checksCol[i].firstChild.checked){
+									eliminarTarea(i);
+									i = 0;
+									continue;
+								}
+								i++;
+							}
+
+							alert("Tarea eliminada");
+							this.classList.remove("icon-trash");
+							this.classList.add("icon-squared-plus");
+
+
+						}else{
+
+							alert("Proceso cancelado");
+
+						}
+
 					}
 				}
 				
@@ -294,9 +507,6 @@
 
 			divNuevo.appendChild(finalNuevo);
 
-			// console.log(actividadNueva);
-			// console.log(actividadNueva.firstChild);
-
 			bl.block.appendChild(divNuevo);
 			divFantasma.style.display = "none";
 			var tareaBox = divFantasma.getElementsByClassName("tareaBox")[0];
@@ -335,13 +545,14 @@
 
 			bl.block.appendChild(divDetallesNuevo);
 
-			infoArray = document.getElementsByClassName('detalles');
+			bl.infoArray = document.getElementsByClassName('detalles');
+			bl.checksCol = block.getElementsByClassName('checkbox');
 
 
 			for (var i = 1; i <= infoArray.length; i++){
-				//console.log(bl.actividades[i]);
 
 				bl.actividades[i].addEventListener("click", detalles);
+				bl.checksCol[i].firstChild.addEventListener("change", checkOne);
 			}
 
 
@@ -351,6 +562,29 @@
 			e.preventDefault();
 
 		}
+
+		var eliminarTarea = function(tarea){
+
+			var tareaRow, detallesRow, arrayRows = bl.block.getElementsByClassName("rows"),i;
+			
+			tareaRow = arrayRows[tarea*2];
+			bl.block.removeChild(tareaRow);
+
+			detallesRow = arrayRows[tarea*2];
+			bl.block.removeChild(detallesRow);
+
+
+		};
+
+		var eliminarTodasTareas = function(){
+			var tareaRow, arrayRows = bl.block.getElementsByClassName("rows"),i;
+
+			for (i=0; i < arrayRows.length; i++){
+				tareaRow = arrayRows[i];
+				bl.block.removeChild(tareaRow);
+			}
+
+		};
 
 		var cerrarTareaNueva = function(){
 			divFantasma.style.display = "none";
@@ -364,13 +598,11 @@
 		bl.tareaNueva.addEventListener("click", crearTarea);
 
 		for (var i = 1; i <= infoArray.length; i++){
-			//console.log(bl.actividades[i]);
 
 			bl.actividades[i].addEventListener("click", detalles);
 		}
 
 		for (var k = 0; k < checksCol.length; k++){
-			//console.log(bl.checksCol[k].firstChild);
 			bl.checksCol[k].firstChild.addEventListener("change", checkOne);
 		}
 
@@ -387,5 +619,4 @@
 
 	var BlockTareas = new Block();
 
-	//console.log(BlockTareas);
 }());

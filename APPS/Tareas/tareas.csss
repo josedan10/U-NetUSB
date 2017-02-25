@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; }
+
+html,
+body {
+  height: 100%; }
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.block {
+  margin-top: 20px;
+  width: 60%;
+  max-width: 600px;
+  height: auto; }
+
+.secciones {
+  background: #EA3C3C;
+  color: white; }
+  .secciones .actividad {
+    cursor: default; }
+
+.block-header,
+.secciones,
+.rows {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #1E1E1E; }
+
+.actividad {
+  width: 60%;
+  text-align: center;
+  position: relative;
+  cursor: pointer; }
+  .actividad .tooltip-info {
+    visibility: hidden;
+    position: absolute;
+    top: -25px;
+    left: 30px;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 6px; }
+  .actividad:hover .tooltip-info {
+    visibility: visible;
+    background: #AFAFAF;
+    color: #343434; }
+
+.fecha {
+  text-align: center;
+  width: 15%;
+  min-width: 66px; }
+
+.block-header h2 {
+  width: 80%;
+  text-align: center; }
+
+.opciones {
+  font-size: 18px; }
+  .opciones .icon {
+    margin-left: 20px;
+    cursor: pointer; }
+
+.detalles {
+  text-align: justify;
+  height: 0;
+  overflow: hidden;
+  background: #D8D8D8;
+  padding: 0;
+  border: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+  .detalles .avisos {
+    width: 15%;
+    text-align: center; }
+    .detalles .avisos span {
+      padding: 10px;
+      display: block; }
+  .detalles .info {
+    width: 70%; }
+  .detalles .ediciones {
+    width: 15%;
+    text-align: center; }
+    .detalles .ediciones span {
+      display: block;
+      padding: 10px; }
+
+.divFantasma {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 5;
+  top: 0; }
+  .divFantasma .cerradura {
+    text-align: right;
+    font-size: 25px;
+    padding: 10px; }
+    .divFantasma .cerradura .icon {
+      cursor: pointer; }
+  .divFantasma .tareaBox {
+    padding: 20px;
+    width: 75%;
+    max-width: 500px;
+    height: 40%;
+    min-height: 400px;
+    background: #EEF0FF;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; }
+    .divFantasma .tareaBox input {
+      height: 30px;
+      width: 100%;
+      margin-bottom: 15px; }
+    .divFantasma .tareaBox textarea {
+      width: 100%;
+      resize: none;
+      min-height: 100px; }
+    .divFantasma .tareaBox button {
+      margin-top: 10px;
+      background: #0066cc;
+      border: none;
+      padding: 5px;
+      color: #fff; }
+    .divFantasma .tareaBox button:hover {
+      cursor: pointer; }
+    .divFantasma .tareaBox button:active {
+      background: #000; }
+
+@media screen and (max-width: 840px) {
+  .block {
+    width: 100%;
+    font-size: 14px; } }
+
+/*# sourceMappingURL=tareas.csss.map */
