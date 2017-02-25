@@ -6,7 +6,7 @@
 				<li><a
 				 href="profile.php"><span class="icon icon-user"></span>Perfil</a></li>
 				<li><a
-				 href="#"><span class="icon icon-list"></span>Encuestas</a></li>
+				 href="#"><span class="icon icon-area-graph"></span>Encuestas</a></li>
 				<li><a
 				 href="#"><span class="icon icon-calendar"></span>Horario</a></li>
 				<li><a
