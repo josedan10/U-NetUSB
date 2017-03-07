@@ -6,9 +6,7 @@ QUICK
 
 2. Se debe colocar la restricción de espacio para los nombres y la contraseña en los formularios de ingreso y registro.
 
-3. Se deben hacer los "tooltips" de ayuda para el formulario de registro.
-
-4. Usar Alertify.js para las alertas.
+3. Usar Alertify.js para las alertas.
 
 /*--- POR HACER ---*/
 

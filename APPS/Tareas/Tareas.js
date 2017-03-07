@@ -65,7 +65,7 @@
 		> infoArray
 			Elemento: div->array
 			id: -
-			clases: -
+			clases: detalles, rows
 			Padre: -
 			Descripcion: Contiene todos los divs de detalles que contienen la informacion de las tareas
 
@@ -549,11 +549,16 @@
 			bl.checksCol = block.getElementsByClassName('checkbox');
 
 
-			for (var i = 1; i <= infoArray.length; i++){
 
-				bl.actividades[i].addEventListener("click", detalles);
+			for (var i = 0; i < checksCol.length; i++){
+
 				bl.checksCol[i].firstChild.addEventListener("change", checkOne);
+				bl.actividades[i+1].addEventListener("click", detalles);
 			}
+
+			    
+
+
 
 
 			alert("Tarea agregada exitosamente");
@@ -579,8 +584,8 @@
 		var eliminarTodasTareas = function(){
 			var tareaRow, arrayRows = bl.block.getElementsByClassName("rows"),i;
 
-			for (i=0; i < arrayRows.length; i++){
-				tareaRow = arrayRows[i];
+			while(arrayRows.length > 0){
+				tareaRow = arrayRows[0];
 				bl.block.removeChild(tareaRow);
 			}
 
@@ -590,6 +595,101 @@
 			divFantasma.style.display = "none";
 			var tareaBox = divFantasma.getElementsByClassName("tareaBox")[0];
 			divFantasma.removeChild(tareaBox);
+		};
+
+		var editar = function(){
+			//Creamos dinamicamente el formulario para editar la tarea
+
+			this.classList.add("editar");
+				
+			divFantasma.style.display = "block";
+			var tareaBox = document.createElement("div");
+			tareaBox.classList.add("tareaBox");
+			divFantasma.appendChild(tareaBox);
+
+			var formNuevaTarea = document.createElement("form");
+
+			var nombreTarea = document.createElement("input");
+			nombreTarea.setAttribute("id","Nombre");
+			var idNombre = document.createElement("label");
+			idNombre.setAttribute("for","Nombre");
+
+			var inicioTarea = document.createElement("input");
+			inicioTarea.setAttribute("id","inicio");
+			var idInicio = document.createElement("label");
+			idInicio.setAttribute("for","inicio");
+
+			var finalTarea = document.createElement("input");
+			finalTarea.setAttribute("id","final");
+			var idFinal = document.createElement("label");
+			idFinal.setAttribute("for","final");
+
+			var descripcionTarea = document.createElement("textarea");
+			descripcionTarea.setAttribute("id","descripcion");
+			var idDescrip = document.createElement("label");
+			idDescrip.setAttribute("for","descripcion");
+
+			var texto;
+
+			texto = document.createTextNode("Nombre");
+
+			idNombre.appendChild(texto);
+			formNuevaTarea.appendChild(idNombre);
+			formNuevaTarea.appendChild(nombreTarea);
+
+			texto = document.createTextNode("Inicio");
+			idInicio.appendChild(texto);
+			formNuevaTarea.appendChild(idInicio);
+			formNuevaTarea.appendChild(inicioTarea);
+			formNuevaTarea.appendChild(inicioTarea);
+			formNuevaTarea.appendChild(inicioTarea);
+
+			texto = document.createTextNode("Final");
+			idFinal.appendChild(texto);
+			formNuevaTarea.appendChild(idFinal);
+			formNuevaTarea.appendChild(finalTarea);
+			formNuevaTarea.appendChild(finalTarea);
+			formNuevaTarea.appendChild(finalTarea);
+
+			texto = document.createTextNode("Descripción");
+			idDescrip.appendChild(texto);
+			formNuevaTarea.appendChild(idDescrip);
+			formNuevaTarea.appendChild(descripcionTarea);
+
+			tareaBox.appendChild(formNuevaTarea);
+
+			var button = document.createElement("button");
+			
+			var valor = document.createTextNode("Guardar cambios");
+			button.setAttribute("id","editarTarea");
+			button.appendChild(valor);
+			formNuevaTarea.appendChild(button);
+			bl.button = button;
+
+			bl.button.addEventListener("click",agregarTareaEditada);
+		};
+
+		var agregarTareaEditada = function(){
+
+			var i, j;
+
+			for (i = 0; i < rows.length; i++){
+
+				for (j = 0; j < rows[i].classList.length; j++){
+
+					if (rows[i].classList[j] == "editar"){
+						flag = 1;
+						break;
+					}
+				}
+
+				if (flag == 1){
+					break;
+				}
+			}
+
+			console.log(rows[i]);
+
 		};
 
 		/*>>>>>>>>>>>>>>>>>>>>>>>>>>> EVENTOS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -611,6 +711,11 @@
 
 		bl.checkMaster.addEventListener("change", checkAll);
 
+
+		for (var i = 0; i < infoArray.length; i++){
+
+			bl.infoArray[i].getElementsByClassName("ediciones")[0].getElementsByClassName("icon-edit")[0].addEventListener("click", editar);
+		}
 		
 
 		return bl;
