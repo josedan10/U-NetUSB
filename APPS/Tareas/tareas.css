@@ -92,6 +92,8 @@ body {
     .detalles .ediciones span {
       display: block;
       padding: 10px; }
+      .detalles .ediciones span:hover {
+        cursor: pointer; }
 
 .divFantasma {
   position: absolute;

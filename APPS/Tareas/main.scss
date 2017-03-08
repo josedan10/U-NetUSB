@@ -113,6 +113,10 @@ body{
 		span{
 			display: block;
 			padding: 10px;
+
+			&:hover{
+				cursor: pointer;
+			}
 		}
 	}
 

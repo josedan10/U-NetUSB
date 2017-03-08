@@ -556,10 +556,6 @@
 				bl.actividades[i+1].addEventListener("click", detalles);
 			}
 
-			    
-
-
-
 
 			alert("Tarea agregada exitosamente");
 			
@@ -597,10 +593,10 @@
 			divFantasma.removeChild(tareaBox);
 		};
 
-		var editar = function(){
+		var editar = function(e){
 			//Creamos dinamicamente el formulario para editar la tarea
 
-			this.classList.add("editar");
+			this.parentNode.parentNode.classList.add("editar");
 				
 			divFantasma.style.display = "block";
 			var tareaBox = document.createElement("div");
@@ -611,21 +607,54 @@
 
 			var nombreTarea = document.createElement("input");
 			nombreTarea.setAttribute("id","Nombre");
+			
+			var valor,i, flag = 0;
+
+			/*Hay que buscar en la lista de filas cual tiene la clase 'editar*/
+
+			for (i=0; i < rows.length; i++){
+				for (var j = 0; j < rows[i].classList.length; j++){
+					if (rows[i].classList[j] == 'editar'){
+						flag = 1
+						break;
+					}
+				}
+
+				if (flag)break;
+			}
+
+			//Encontramos el row detalle, -1 es el row de cabecera
+			valor = rows[i-1].getElementsByClassName("actividad")[0].lastChild;
+			//Usamos el selector .lastChild porque tenemos el span y el nodo de texto
+			nombreTarea.value = valor.nodeValue;
+
 			var idNombre = document.createElement("label");
 			idNombre.setAttribute("for","Nombre");
 
 			var inicioTarea = document.createElement("input");
 			inicioTarea.setAttribute("id","inicio");
+
+			valor = rows[i-1].getElementsByClassName("fecha")[0].innerHTML;
+			inicioTarea.value = valor;
+
 			var idInicio = document.createElement("label");
 			idInicio.setAttribute("for","inicio");
 
 			var finalTarea = document.createElement("input");
 			finalTarea.setAttribute("id","final");
+
+			valor = rows[i-1].getElementsByClassName("fecha")[1].innerHTML;
+			finalTarea.value = valor;
+
 			var idFinal = document.createElement("label");
 			idFinal.setAttribute("for","final");
 
 			var descripcionTarea = document.createElement("textarea");
 			descripcionTarea.setAttribute("id","descripcion");
+
+			valor = rows[i].getElementsByClassName("info")[0].innerHTML;
+			descripcionTarea.value = valor;
+
 			var idDescrip = document.createElement("label");
 			idDescrip.setAttribute("for","descripcion");
 
@@ -660,18 +689,30 @@
 
 			var button = document.createElement("button");
 			
-			var valor = document.createTextNode("Guardar cambios");
+			valor = document.createTextNode("Guardar cambios");
 			button.setAttribute("id","editarTarea");
 			button.appendChild(valor);
 			formNuevaTarea.appendChild(button);
-			bl.button = button;
+			bl.buttonEdit = button;
 
-			bl.button.addEventListener("click",agregarTareaEditada);
+			bl.buttonEdit.addEventListener("click",agregarTareaEditada);
+
+			console.log(bl.buttonEdit);
+			e.preventDefault();
 		};
 
-		var agregarTareaEditada = function(){
+		var agregarTareaEditada = function(e){
 
 			var i, j;
+			var flag;
+			var nombre = document.getElementById("Nombre");
+			var inicio = document.getElementById("inicio");
+			var final = document.getElementById("final");
+			var descripcion = document.getElementById("descripcion");
+			var block = document.getElementById("block");
+
+			console.log(nombre);
+			console.log("Hola mundo");
 
 			for (i = 0; i < rows.length; i++){
 
@@ -688,7 +729,22 @@
 				}
 			}
 
-			console.log(rows[i]);
+			divFantasma.style.display = "none";
+			var tareaBox = divFantasma.getElementsByClassName("tareaBox")[0];
+			divFantasma.removeChild(tareaBox);
+
+			rows[i-1].getElementsByClassName("actividad")[0].lastChild.nodeValue = nombre.value;
+			rows[i-1].getElementsByClassName("fecha")[0].innerHTML = inicio.value;
+			rows[i-1].getElementsByClassName("fecha")[1].innerHTML = final.value;
+			rows[i].getElementsByClassName("info")[0].innerHTML = descripcion.value;
+
+			//Actualizamos los datos
+
+			bl.actividades = document.getElementsByClassName('actividad');
+			bl.infoArray = document.getElementsByClassName('info');
+
+			e.preventDefault();
+
 
 		};
 
