@@ -15,9 +15,9 @@
 <body>
 
 	<div class="content">
-		<?php include "plantillas/header.php";?>
-		<?php include 'plantillas/main.php'; ?>
-		<?php include 'plantillas/chat.php'; ?>		
+		<?php include('plantillas/header.php');?> 
+		<?php include('plantillas/main.php'); ?>
+		<?php include('plantillas/chat.php'); ?>		
 	</div>
 	
 	<script src="Javascript/desplegar_chat.js"></script>
