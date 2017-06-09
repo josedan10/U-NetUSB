@@ -38,4 +38,3 @@
 		</ul>
 	</div>
 </header>
-<script type="text/javascript" src="../Javascript/buscar.js"></script>

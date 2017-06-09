@@ -20,8 +20,13 @@
 		<?php include('plantillas/chat.php'); ?>		
 	</div>
 	
+
+	<!--                                       SCRIPTS                                    -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="Javascript/SlideShow.js"></script>
 	<script src="Javascript/desplegar_chat.js"></script>
 	<script src="Javascript/buscar.js"></script>
+
 
 </body>
 </html>

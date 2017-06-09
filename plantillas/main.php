@@ -1,5 +1,5 @@
 <section class="main">
-	<div class="galery"></div>
+	<?php include('slideshow.php') ?>
 
 	<div class="blocks">
 		<div class="cells">

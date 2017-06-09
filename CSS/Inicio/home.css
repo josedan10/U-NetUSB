@@ -37,11 +37,6 @@ body {
   margin-top: 35px;
   width: 100%; }
 
-.galery {
-  width: 100%;
-  height: 350px;
-  background: #000033; }
-
 /*BLOQUES*/
 .blocks {
   width: 100%;
@@ -77,6 +72,115 @@ body {
   padding: 5px 8px;
   text-decoration: none;
   color: black; }
+
+.SlideShow {
+  height: 400px;
+  width: 100%;
+  background: #cccccc;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px; }
+
+.slide {
+  position: absolute;
+  display: block;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+  .slide img {
+    width: 100%;
+    position: relative; }
+
+.activeSlide {
+  display: block;
+  opacity: 1;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+
+.slide .info {
+  position: absolute;
+  bottom: 0px;
+  height: 170px;
+  width: 100%;
+  padding: 10px;
+  background: rgba(245, 245, 245, 0.7); }
+
+.slide .info p {
+  font-size: 12px;
+  margin-top: 10px; }
+
+.controles {
+  display: flex;
+  position: absolute;
+  padding: 10px;
+  align-self: center;
+  width: 100%;
+  color: white;
+  justify-content: space-between;
+  font-size: 30px; }
+
+.controles span {
+  border-radius: 50%;
+  padding: 10px;
+  background: rgba(150, 150, 150, 0.5);
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.controles span:hover {
+  background: rgba(250, 250, 250, 0.9);
+  color: #151515;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.marcadores {
+  height: 20px;
+  width: 100px;
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  align-items: center;
+  justify-content: space-between; }
+
+.marcadores span {
+  height: 20px;
+  width: 20px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: #151515;
+  border-width: 2px;
+  display: inline-block;
+  background: transparent; }
+
+.marcadores span:hover {
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.marcadores .activeMark {
+  background-color: #151515;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease; }
 
 /*>>>>> Colores <<<<<*/
 /*---ENCABEZADO---*/
@@ -128,7 +232,7 @@ header {
   list-style: none; }
 
 .menu ul li a {
-  font-family: 14px "Roboto", sans-serif;
+  font: 14px "Roboto", sans-serif;
   color: white;
   text-decoration: none;
   display: block;
@@ -261,6 +365,7 @@ nav ul li:hover span {
 
 .chat_btn {
   color: white;
+  font: 14px "Roboto", sans-serif;
   width: 100%;
   height: 30px;
   padding: 4px 0;
@@ -274,7 +379,8 @@ nav ul li:hover span {
   width: 95%;
   position: absolute;
   bottom: 5px;
-  left: 5px; }
+  left: 5px;
+  border-radius: 5px; }
 
 @media screen and (max-width: 1000px) {
   .buscador {
